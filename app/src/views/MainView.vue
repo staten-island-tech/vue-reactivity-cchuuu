@@ -1,12 +1,5 @@
-<template>
-  <div>
-    <main></main>
-  </div>
-</template>
+<template></template>
 
-<script setup>
-import NormalFile from '.../src/component/NormalFile.vue'
-const main = NormalFile
-</script>
+<script setup></script>
 
 <style scoped></style>
