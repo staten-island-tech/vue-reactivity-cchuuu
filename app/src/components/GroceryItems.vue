@@ -1,10 +1,14 @@
 <template>
-  <div>
-    <GroceryItems :item="GroceryItems" />
+  <div class="container">
+    <div class="card">
+      <DisplayFunction v-for="item in GroceryItems" :key="item.name" :item="item" />
+    </div>
   </div>
 </template>
 
 <script setup>
+import DisplayFunction from './DisplayFunction.vue'
+
 const GroceryItems = [
   {
     name: 'Apple',
