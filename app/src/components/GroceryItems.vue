@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="card">
+  <div>
+    <div class="container flex flex-wrap items-center justify-around w-full h-full m-auto">
       <DisplayFunction v-for="item in GroceryItems" :key="item.name" :item="item" />
     </div>
   </div>
