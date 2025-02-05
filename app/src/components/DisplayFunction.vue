@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card w-1/5 h-[20vw] bg-gray-400 rounded-3xl flex flex-col items-center justify-evenly m-8 border-2 border-black"
+    class="card w-1/6 h-[15vw] bg-gray-400 rounded-3xl flex flex-col items-center justify-evenly m-6 border-2 border-black"
   >
     <h2 class="text-center font-bold text-2xl">{{ item.name }}</h2>
     <img
