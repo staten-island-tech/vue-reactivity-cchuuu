@@ -2,6 +2,7 @@
   <div>
     <MainHeader />
     <GroceryItems />
+    <ShoppingCart />
   </div>
 </template>
 
