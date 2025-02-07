@@ -22,6 +22,8 @@
 defineProps({
   item: Object,
 })
+
+function addToCart() {}
 </script>
 
 <style scoped></style>
