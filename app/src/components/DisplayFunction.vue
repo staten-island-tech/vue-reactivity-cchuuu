@@ -10,7 +10,7 @@
     />
     <h3 class="text-center text-xl">{{ item.price }}</h3>
     <button
-      @click="addToCart"
+      @click="cartItems.cart.push(item)"
       class="bg-blue-100 rounded-lg w-[6vw] h-[2vw] border-black border-2 text-black"
     >
       Add to Cart!
@@ -19,11 +19,10 @@
 </template>
 
 <script setup>
+import { cartItems } from '@/array/store'
 defineProps({
   item: Object,
 })
-
-function addToCart() {}
 </script>
 
 <style scoped></style>
