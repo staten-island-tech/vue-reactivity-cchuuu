@@ -10,7 +10,7 @@
     />
     <h3 class="text-center text-xl">{{ item.price }}</h3>
     <button
-      @click="cartItems.cart.push(item)"
+      @click="addItem(item)"
       class="bg-blue-100 rounded-lg w-[6vw] h-[2vw] border-black border-2 text-black"
     >
       Add to Cart!
@@ -23,6 +23,16 @@ import { cartItems } from '@/array/store'
 defineProps({
   item: Object,
 })
+
+function addItem(item) {
+  const breathingItem = cartItems.cart.find((item) => item.id == item.id)
+
+  if (breathingItem.quantity > 1) {
+    breathingItem.quantity++
+  } else {
+    cartItems.cart.push({ ...item })
+  }
+}
 </script>
 
 <style scoped></style>
