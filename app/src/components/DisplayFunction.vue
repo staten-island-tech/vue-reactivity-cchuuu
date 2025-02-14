@@ -8,7 +8,7 @@
       :alt="item.type"
       class="object-cover w-[90%] h-[55%] rounded-lg shadow-md border-black border-2"
     />
-    <h3 class="text-center text-xl">{{ item.price }}</h3>
+    <h3 class="text-center text-xl">${{ item.price }}</h3>
     <button
       @click="addItem(item)"
       class="bg-blue-100 rounded-lg w-[6vw] h-[2vw] border-black border-2 text-black"
@@ -25,12 +25,12 @@ defineProps({
 })
 
 function addItem(item) {
-  const breathingItem = cartItems.cart.find((item) => item.id == item.id)
+  const itemInCart = cartItems.cart.find((a) => a.id === item.id)
 
-  if (breathingItem.quantity > 1) {
-    breathingItem.quantity++
+  if (itemInCart) {
+    itemInCart.quantity++
   } else {
-    cartItems.cart.push({ ...item })
+    cartItems.cart.push(item)
   }
 }
 </script>
