@@ -25,7 +25,7 @@ defineProps({
 })
 
 function addItem(item) {
-  const itemInCart = cartItems.cart.find((a) => a.id === item.id)
+  cartItems.cart.push(item)
 
   if (itemInCart) {
     itemInCart.quantity++
