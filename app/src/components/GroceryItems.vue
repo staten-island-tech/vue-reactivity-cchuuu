@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container fixed flex flex-wrap items-center justify-around w-full h-full mt-5">
+    <div class="container flex flex-wrap items-center justify-around mt-5">
       <DisplayFunction v-for="item in GroceryItems" :key="item.name" :item="item" />
     </div>
   </div>

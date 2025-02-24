@@ -5,12 +5,16 @@
     >
       <h1 class="text-center text-xl font-bold">Shopping Cart</h1>
       <div class="mt-4 font-semibold">Total: ${{ totalPrice() }}</div>
-      <ul>
-        <li v-for="item in cartItems.cart" :key="item.id" :item="item" class="flex justify-between">
-          <h3>{{ item.name }} Quantity: {{ item.quantity }}</h3>
-          <h3>${{ price(item) }}</h3>
-        </li>
-      </ul>
+      <li v-for="item in cartItems.cart" :key="item.id" :item="item" class="flex justify-between">
+        <h3>x{{ item.quantity }} {{ item.name }}</h3>
+        <h3>${{ price(item) }}</h3>
+      </li>
+      <button
+        @click="clearCart(cart)"
+        class="rounded-lg w-[5vw] h-[1.5vw] border-black border-2 text-black m-1"
+      >
+        Clear Cart
+      </button>
     </div>
   </div>
 </template>
@@ -30,6 +34,11 @@ function totalPrice() {
 
 function price(item) {
   return Math.round(item.price * item.quantity * 100) / 100
+}
+
+function clearCart() {
+  cartItems.cart.forEach((items) => (items.quantity = 1))
+  cartItems.cart = []
 }
 </script>
 
