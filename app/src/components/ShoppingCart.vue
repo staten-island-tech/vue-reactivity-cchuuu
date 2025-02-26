@@ -25,9 +25,10 @@ defineProps({
   cartItems: Array,
 })
 function totalPrice() {
-  const total = cartItems.cart.reduce((total, item) => {
-    return total + item.price * item.quantity
-  }, 0)
+  let total = 0
+  cartItems.cart.forEach((item) => {
+    return (total += item.price * item.quantity)
+  })
 
   return Math.round(total * 100) / 100
 }
